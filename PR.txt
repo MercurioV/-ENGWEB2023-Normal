@@ -1,1 +1,59 @@
-hola
+All the queries are used using aggregation pipelines, after connecting to the database we would use the aggregate function, with the query inside
+Quantos registos estão na base de dados? 29617
+    const agg = [
+        {
+            '$count': 'count'
+        }
+    ];
+Quantos registos de plantação se encontram na freguesia "São Domingos de Rana"? 5903
+    const agg = [
+        {
+            '$match': {
+            'Freguesia': 'São Domingos de Rana'
+            }
+        }, {
+            '$count': 'count'
+        }
+    ];
+Qual a lista de freguesias (ordenada alfabeticamente e sem repetições)?
+    ""
+    "Abóboda"
+    "Alcabideche"
+    "São Domingos de Rana"
+    "U.F. Carcavelos e Parede"
+    "U.F. Cascais e Estoril"
+    [
+    {
+        '$group': {
+        '_id': '$Freguesia'
+        }
+    }, {
+        '$sort': {
+        '_id': 1
+        }
+    }
+    ]
+ Qual a distribuição dos registos por freguesia (quantos registos em cada freguesia)
+    "":26,"U.F. Cascais e Estoril":12023,"São Domingos de Rana":5903,"U.F. Carcavelos e Parede":7629,"Abóboda":2,"Alcabideche":4034
+    [
+        {
+            '$group': {
+            '_id': '$Freguesia', 
+            'count': {
+                '$count': {}
+            }
+            }
+        }
+    ]
+Qual a distribuição dos registos por espécie?
+    "paulonia":1,"marmeleiro":2,"damasqueiro":1,"mioporum":59,"acacia bastarda":101,"ficus":40,"yuca":200,"chopo branco":473,"figueira":36,"tilia":653
+    [
+        {
+            '$group': {
+            '_id': '$Espécie', 
+            'count': {
+                '$count': {}
+            }
+            }
+        }
+    ]
