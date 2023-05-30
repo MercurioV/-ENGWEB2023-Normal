@@ -1,3 +1,5 @@
+To create the database I used mongoDB compass, creating a local db with name and collection plantas, and to introduce the data given I imported the json file. To run the webPage its just needed to first initialize the api and then the interface.
+
 All the queries are used using aggregation pipelines, after connecting to the database we would use the aggregate function, with the query inside
 Quantos registos estão na base de dados? 29617
     const agg = [
