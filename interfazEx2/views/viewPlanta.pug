@@ -1,0 +1,63 @@
+extends layout
+block content
+  head
+    title Plant Details
+  body
+    h1 Plant Details
+    table
+      tr
+        th Attribute
+        th Value
+      tr
+        td Id
+        td= planta.Id
+      tr
+        td Número de Registo
+        td= planta['Número de Registo']
+      tr
+        td Código de rua
+        td= planta['Código de rua']
+      tr
+        td Rua
+        td= planta.Rua
+      tr
+        td Local
+        td= planta.Local
+      tr
+        td Freguesia
+        td= planta.Freguesia
+      tr
+        td Espécie
+        td= planta.Espécie
+      tr
+        td Nome Científico
+        td= planta['Nome Científico']
+      tr
+        td Origem
+        td= planta.Origem
+      tr
+        td Data de Plantação
+        td= planta['Data de Plantação']
+      tr
+        td Estado
+        td= planta.Estado
+      tr
+        td Caldeira
+        td= planta.Caldeira
+      tr
+        td Tutor
+        td= planta.Tutor
+      tr
+        td Implantação
+        td= planta.Implantação
+      tr
+        td Gestor
+        td= planta.Gestor
+      tr
+        td Data de Atualização
+        td= planta['Data de atualização']
+      tr
+        td Número de intervenções
+        td= planta['Número de intervenções']
+    h2
+        a(href="/") Voltar

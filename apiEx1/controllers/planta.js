@@ -64,7 +64,7 @@ module.exports.filteredList = (filter,value) => {
 }
 
 module.exports.findPlanta = id => {
-    return plantas.findOne({id:id})
+    return plantas.findOne({Id:id})
             .then(resposta => {
                 return resposta
             })
