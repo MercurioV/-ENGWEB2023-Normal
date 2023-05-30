@@ -78,7 +78,7 @@ router.post('/api/plantas', function(req, res) {
     })
 })
 
-router.delete('/api/plantas/:d', function(req, res) {
+router.delete('/api/plantas/:id', function(req, res) {
   Planta.deletePlanta(req.params.id)
     .then(dados => {
       res.jsonp(dados)

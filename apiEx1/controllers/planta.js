@@ -104,7 +104,7 @@ module.exports.addPlanta = l => {
 }
 
 module.exports.deletePlanta = id => {
-    return streets.deleteOne({Id:id})
+    return plantas.deleteOne({Id:id})
             .then(resposta => {
                 return resposta
             })
